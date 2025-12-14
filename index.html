@@ -1,0 +1,138 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2685.2">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; -webkit-text-stroke: #000000}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; -webkit-text-stroke: #000000; min-height: 14.0px}
+    span.s1 {font-kerning: none}
+  </style>
+</head>
+<body>
+<p class="p1"><span class="s1">&lt;!DOCTYPE html&gt;</span></p>
+<p class="p1"><span class="s1">&lt;html lang="ja"&gt;</span></p>
+<p class="p1"><span class="s1">&lt;head&gt;</span></p>
+<p class="p1"><span class="s1">&lt;meta charset="UTF-8"&gt;</span></p>
+<p class="p1"><span class="s1">&lt;title&gt;旅タイプ診断&lt;/title&gt;</span></p>
+<p class="p1"><span class="s1">&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</span></p>
+<p class="p1"><span class="s1">&lt;style&gt;</span></p>
+<p class="p1"><span class="s1">body{</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>font-family:-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>background:#f7f7f7;margin:0</span></p>
+<p class="p1"><span class="s1">}</span></p>
+<p class="p1"><span class="s1">.container{</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>max-width:600px;margin:auto;background:#fff;min-height:100vh;padding:20px</span></p>
+<p class="p1"><span class="s1">}</span></p>
+<p class="p1"><span class="s1">h1,h2{text-align:center}</span></p>
+<p class="p1"><span class="s1">.field{margin-bottom:20px}</span></p>
+<p class="p1"><span class="s1">label{font-weight:bold;display:block;margin-bottom:6px}</span></p>
+<p class="p1"><span class="s1">input,select{width:100%;padding:10px;font-size:16px}</span></p>
+<p class="p1"><span class="s1">button{</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>width:100%;padding:14px;font-size:16px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>background:#4f46e5;color:#fff;border:none;border-radius:6px</span></p>
+<p class="p1"><span class="s1">}</span></p>
+<p class="p1"><span class="s1">button:disabled{background:#aaa}</span></p>
+<p class="p1"><span class="s1">.choice{</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>margin:10px 0;padding:12px;border:1px solid #ddd;border-radius:6px</span></p>
+<p class="p1"><span class="s1">}</span></p>
+<p class="p1"><span class="s1">.choice:hover{background:#f0f0ff;cursor:pointer}</span></p>
+<p class="p1"><span class="s1">.hidden{display:none}</span></p>
+<p class="p1"><span class="s1">.result{</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>background:#f9fafb;padding:20px;border-radius:8px;margin-top:20px</span></p>
+<p class="p1"><span class="s1">}</span></p>
+<p class="p1"><span class="s1">&lt;/style&gt;</span></p>
+<p class="p1"><span class="s1">&lt;/head&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">&lt;body&gt;</span></p>
+<p class="p1"><span class="s1">&lt;div class="container"&gt;</span></p>
+<p class="p1"><span class="s1">&lt;h1&gt;旅タイプ診断&lt;/h1&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">&lt;div id="step-basic"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;div class="field"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;label&gt;今回の日数&lt;/label&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;select id="days"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;option value=""&gt;選択してください&lt;/option&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;option&gt;日帰り&lt;/option&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;option&gt;1泊2日&lt;/option&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;option&gt;2泊3日&lt;/option&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;option&gt;3泊4日&lt;/option&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;option&gt;4泊5日以上&lt;/option&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/select&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;div class="field"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;label&gt;1人あたりの予算&lt;/label&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;input id="budget" placeholder="例：5万円"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;button id="startBtn" disabled&gt;診断スタート&lt;/button&gt;</span></p>
+<p class="p1"><span class="s1">&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">&lt;div id="step-question" class="hidden"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;h2 id="question"&gt;&lt;/h2&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;div id="choices"&gt;&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1">&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">&lt;div id="step-result" class="hidden"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;h2&gt;診断結果&lt;/h2&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;div class="result" id="result"&gt;&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1">&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1">&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">&lt;script&gt;</span></p>
+<p class="p1"><span class="s1">const questions=[</span></p>
+<p class="p1"><span class="s1">["旅の朝、どう目覚めたい？",["自然","都会","優雅","自由"]],</span></p>
+<p class="p1"><span class="s1">["迷子になったら？",["探検","地図","人に聞く","写真"]],</span></p>
+<p class="p1"><span class="s1">["食事で重視する？",["名店","ローカル","雰囲気","食べ歩き"]],</span></p>
+<p class="p1"><span class="s1">["本を一冊なら？",["歴史","漫画","哲学","ガイド"]],</span></p>
+<p class="p1"><span class="s1">["旅の靴は？",["スニーカー","おしゃれ","スリッパ","登山"]],</span></p>
+<p class="p1"><span class="s1">["夜の気分は？",["バー","星","マッサージ","夜景"]],</span></p>
+<p class="p1"><span class="s1">["カバンの余白は？",["空","準備","最小","土産"]],</span></p>
+<p class="p1"><span class="s1">["行きたい時代は？",["太古","中世","未来","子供"]],</span></p>
+<p class="p1"><span class="s1">["帰宅後どうなりたい？",["疲労","知識","回復","活力"]],</span></p>
+<p class="p1"><span class="s1">["旅とは？",["冒険","逃避","発見","交流"]]</span></p>
+<p class="p1"><span class="s1">];</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">let i=0,answers=[];</span></p>
+<p class="p1"><span class="s1">const days=document.getElementById("days");</span></p>
+<p class="p1"><span class="s1">const budget=document.getElementById("budget");</span></p>
+<p class="p1"><span class="s1">const startBtn=document.getElementById("startBtn");</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">days.onchange=budget.oninput=()=&gt;startBtn.disabled=!(days.value&amp;&amp;budget.value);</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">startBtn.onclick=()=&gt;{</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>document.getElementById("step-basic").classList.add("hidden");</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>document.getElementById("step-question").classList.remove("hidden");</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>show();</span></p>
+<p class="p1"><span class="s1">};</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">function show(){</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>document.getElementById("question").textContent=`Q${i+1}. ${questions[i][0]}`;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>const c=document.getElementById("choices");c.innerHTML="";</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>questions[i][1].forEach((t,n)=&gt;{</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>const d=document.createElement("div");</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>d.className="choice";d.textContent=t;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>d.onclick=()=&gt;{answers.push(n);i++;i&lt;10?show():result()};</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>c.appendChild(d);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>});</span></p>
+<p class="p1"><span class="s1">}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">function result(){</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>document.getElementById("step-question").classList.add("hidden");</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>document.getElementById("step-result").classList.remove("hidden");</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>const type=answers.filter(a=&gt;a===0).length&gt;=3?</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>"五感で感じるネイチャー・ビースト":</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>"知的好奇心旺盛なタイムトラベラー";</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>const place=type.includes("ネイチャー")?"屋久島":"金沢";</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>document.getElementById("result").innerHTML=</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space"> </span>`&lt;p&gt;&lt;b&gt;${type}&lt;/b&gt;&lt;/p&gt;&lt;p&gt;${days.value}／${budget.value}&lt;/p&gt;&lt;p&gt;おすすめ：${place}&lt;/p&gt;`;</span></p>
+<p class="p1"><span class="s1">}</span></p>
+<p class="p1"><span class="s1">&lt;/script&gt;</span></p>
+<p class="p1"><span class="s1">&lt;/body&gt;</span></p>
+<p class="p1"><span class="s1">&lt;/html&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p2"><span class="s1"></span><br></p>
+</body>
+</html>
